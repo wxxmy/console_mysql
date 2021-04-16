@@ -10,7 +10,7 @@ public class CyclicBarrierDemo {
 		for (int i = 1; i < 8; i++) {
 			int temp = i;
 			new Thread(() -> {
-				System.out.println("收集成功了第" + temp + "颗龙珠");
+				System.out.println("孙悟空收集成功了第" + temp + "颗龙珠");
 				try {
 					cyclicBarrier.await();
 				} catch (InterruptedException | BrokenBarrierException e) {
