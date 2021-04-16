@@ -20,4 +20,6 @@ mybatis:
 #  level:
 #    com.example.demo.dao: debug
 
+demo:
+  time: 123
 

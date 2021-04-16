@@ -1,12 +1,25 @@
 package com.example.demo.domain;
 
+import java.util.Objects;
+import lombok.Data;
+
+@Data
 public class User {
-	private int id;
+
+	private Integer id;
 	private String name;
-	private int age;
+	private Integer age;
+
+	public User(Integer id, String name, Integer age, String sex) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+
 	private String sex;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -22,7 +35,7 @@ public class User {
 		this.name = name;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
@@ -36,5 +49,33 @@ public class User {
 
 	public void setSex(String sex) {
 		this.sex = sex;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", age=" + age +
+				", sex='" + sex + '\'' +
+				'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		User user = (User) o;
+		return Objects.equals(id, user.id) && Objects.equals(name, user.name)
+				&& Objects.equals(age, user.age) && Objects.equals(sex, user.sex);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, name, age, sex);
 	}
 }

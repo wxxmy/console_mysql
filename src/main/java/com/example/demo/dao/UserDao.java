@@ -7,7 +7,12 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserDao {
+
 	List<User> getAllUser();
+
 	void insert(User user);
-	User getUserByCondition(User user);
+
+	List<User> getUserByCondition(User user);
+
+	User getUserByAge(User user);
 }
